@@ -1,4 +1,4 @@
-package esgi.iabd.scala.seances.troisieme
+package esgi.iabd.programmationFonctionnelle.seances.troisieme
 
 object Seance3 {
 

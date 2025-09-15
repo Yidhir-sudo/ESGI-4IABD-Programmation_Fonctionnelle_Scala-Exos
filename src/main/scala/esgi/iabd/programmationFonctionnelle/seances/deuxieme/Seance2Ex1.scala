@@ -1,4 +1,4 @@
-package esgi.iabd.scala.seances.deuxieme
+package esgi.iabd.programmationFonctionnelle.seances.deuxieme
 
 // Séance 2 – Exercice 1: Comptage de mots
 object Seance2Ex1 {

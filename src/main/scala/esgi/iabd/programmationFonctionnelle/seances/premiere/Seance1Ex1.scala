@@ -1,4 +1,4 @@
-package esgi.iabd.scala.seances.premiere
+package esgi.iabd.programmationFonctionnelle.seances.premiere
 
 // Séance 1 – Exercice 1: Affichage simple
 object Seance1Ex1 {

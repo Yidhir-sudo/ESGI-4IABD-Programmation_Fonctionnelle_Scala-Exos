@@ -1,4 +1,4 @@
-package esgi.iabd.scala.seances.quatrieme
+package esgi.iabd.programmationFonctionnelle.seances.quatrieme
 
 class Rectangle(val width: Double, val height: Double) {
   def area: Double = width * height

@@ -1,4 +1,4 @@
-package esgi.iabd.scala.seances.cinquieme
+package esgi.iabd.programmationFonctionnelle.seances.cinquieme
 
 object Seance5 {
 

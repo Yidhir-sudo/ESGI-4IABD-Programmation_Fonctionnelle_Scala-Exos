@@ -1,4 +1,4 @@
-package esgi.iabd.scala.seances.quatrieme
+package esgi.iabd.programmationFonctionnelle.seances.quatrieme
 
 object Seance4 {
 

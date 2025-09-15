@@ -1,4 +1,4 @@
-package esgi.iabd.scala.seances.premiere
+package esgi.iabd.programmationFonctionnelle.seances.premiere
 
 import scala.io.StdIn
 import scala.util.{Random, Try}

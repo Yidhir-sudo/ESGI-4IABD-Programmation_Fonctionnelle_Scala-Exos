@@ -1,4 +1,4 @@
-package esgi.iabd.scala.seances.deuxieme
+package esgi.iabd.programmationFonctionnelle.seances.deuxieme
 
 // Séance 2 – Exercice 2: Comparaison List vs Vector
 object Seance2Ex2 {
