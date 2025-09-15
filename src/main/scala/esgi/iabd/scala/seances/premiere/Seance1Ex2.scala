@@ -1,7 +1,7 @@
-// Séance 1 – Exercice 2: Jeu du nombre mystère
+package esgi.iabd.scala.seances.premiere
+
 import scala.io.StdIn
-import scala.util.Try
-import scala.util.Random
+import scala.util.{Random, Try}
 
 object Seance1Ex2 {
   def main(args: Array[String]): Unit = {

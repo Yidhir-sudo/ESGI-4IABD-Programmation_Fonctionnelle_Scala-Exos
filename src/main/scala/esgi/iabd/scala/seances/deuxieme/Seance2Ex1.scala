@@ -1,3 +1,5 @@
+package esgi.iabd.scala.seances.deuxieme
+
 // Séance 2 – Exercice 1: Comptage de mots
 object Seance2Ex1 {
   def main(args: Array[String]): Unit = {
