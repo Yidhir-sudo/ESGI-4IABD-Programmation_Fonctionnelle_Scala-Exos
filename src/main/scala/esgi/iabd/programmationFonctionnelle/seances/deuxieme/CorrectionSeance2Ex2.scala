@@ -1,7 +1,7 @@
 package esgi.iabd.programmationFonctionnelle.seances.deuxieme
 
 // Séance 2 – Exercice 2: Comparaison List vs Vector
-object Seance2Ex2 {
+object CorrectionSeance2Ex2 {
   def main(args: Array[String]): Unit = {
     val n = 100000
     val liste = List.fill(n)(0)

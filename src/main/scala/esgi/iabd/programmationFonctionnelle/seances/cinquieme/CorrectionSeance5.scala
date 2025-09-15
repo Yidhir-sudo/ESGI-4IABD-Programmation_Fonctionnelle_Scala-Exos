@@ -1,6 +1,6 @@
 package esgi.iabd.programmationFonctionnelle.seances.cinquieme
 
-object Seance5 {
+object CorrectionSeance5 {
 
   def main(args: Array[String]): Unit = {
 
