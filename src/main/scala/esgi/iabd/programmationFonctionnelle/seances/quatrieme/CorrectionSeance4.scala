@@ -1,6 +1,8 @@
 package esgi.iabd.programmationFonctionnelle.seances.quatrieme
 
-object Seance4 {
+import esgi.iabd.programmationFonctionnelle.seances.quatrieme.classes.{Bike, Car, Rectangle, Vehicle}
+
+object CorrectionSeance4 {
 
   def main(args: Array[String]): Unit = {
     // Exemple d’utilisation exercice 1

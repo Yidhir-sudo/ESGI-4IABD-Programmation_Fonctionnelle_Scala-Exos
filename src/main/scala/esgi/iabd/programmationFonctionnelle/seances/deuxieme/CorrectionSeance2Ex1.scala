@@ -1,7 +1,7 @@
 package esgi.iabd.programmationFonctionnelle.seances.deuxieme
 
 // Séance 2 – Exercice 1: Comptage de mots
-object Seance2Ex1 {
+object CorrectionSeance2Ex1 {
   def main(args: Array[String]): Unit = {
     val mots = List("A", "B", "A", "C", "B", "A")
 

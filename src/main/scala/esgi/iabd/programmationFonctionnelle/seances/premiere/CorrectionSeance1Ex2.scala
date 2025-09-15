@@ -3,7 +3,7 @@ package esgi.iabd.programmationFonctionnelle.seances.premiere
 import scala.io.StdIn
 import scala.util.{Random, Try}
 
-object Seance1Ex2 {
+object CorrectionSeance1Ex2 {
   def main(args: Array[String]): Unit = {
     val secret = Random.nextInt(101) // 0..100 inclus
     println("J'ai choisi un nombre entre 0 et 100. À toi de deviner !")

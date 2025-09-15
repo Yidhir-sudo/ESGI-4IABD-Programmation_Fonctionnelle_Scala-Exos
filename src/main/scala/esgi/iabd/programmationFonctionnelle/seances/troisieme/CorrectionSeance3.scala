@@ -1,6 +1,6 @@
 package esgi.iabd.programmationFonctionnelle.seances.troisieme
 
-object Seance3 {
+object CorrectionSeance3 {
 
   def main(args: Array[String]): Unit = {
     val nums = List(1, 2, 3, 4, 5, 6)
