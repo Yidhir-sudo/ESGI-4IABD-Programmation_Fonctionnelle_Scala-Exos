@@ -1,4 +1,4 @@
-package esgi.iabd.programmationFonctionnelle.seances.cinquieme
+package esgi.iabd.programmationFonctionnelle.seance5
 
 object CorrectionSeance5 {
 
