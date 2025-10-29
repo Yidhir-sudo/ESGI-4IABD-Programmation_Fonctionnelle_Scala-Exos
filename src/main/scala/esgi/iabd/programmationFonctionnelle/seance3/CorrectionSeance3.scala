@@ -1,4 +1,4 @@
-package esgi.iabd.programmationFonctionnelle.seances.troisieme
+package esgi.iabd.programmationFonctionnelle.seance3
 
 object CorrectionSeance3 {
 
@@ -23,7 +23,7 @@ object CorrectionSeance3 {
   // Exercice 2
   def textPipeline(text: String): Map[String, Int] = {
     text
-      .split("\\s+")          // découper en mots
+      .split("\\s+")                 // découper en mots
       .map(_.toLowerCase)            // passer en minuscules
       .filter(_.length >= 4)         // garder que les mots de taille ≥ 4
       .groupBy(identity)             // regrouper par mot
