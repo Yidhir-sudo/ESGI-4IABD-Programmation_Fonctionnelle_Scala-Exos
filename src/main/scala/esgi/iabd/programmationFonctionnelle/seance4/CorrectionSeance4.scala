@@ -1,6 +1,6 @@
-package esgi.iabd.programmationFonctionnelle.seances.quatrieme
+package esgi.iabd.programmationFonctionnelle.seance4
 
-import esgi.iabd.programmationFonctionnelle.seances.quatrieme.classes.{Bike, Car, Rectangle, Vehicle}
+import esgi.iabd.programmationFonctionnelle.seance4.classes.{Bike, Car, Rectangle, Vehicle}
 
 object CorrectionSeance4 {
 

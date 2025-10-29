@@ -1,9 +1,6 @@
-package esgi.iabd.programmationFonctionnelle.seances.premiere
+package esgi.iabd.programmationFonctionnelle.seance1
 
-import scala.io.StdIn
-import scala.util.{Random, Try}
-
-object CorrectionSeance1Ex2 {
+object CorrectionSeance1Ex2_versionAmelioree {
   def main(args: Array[String]): Unit = {
     val secret = Random.nextInt(101) // 0..100 inclus
     println("J'ai choisi un nombre entre 0 et 100. À toi de deviner !")
@@ -11,10 +8,10 @@ object CorrectionSeance1Ex2 {
     var attempts = 0
     var found = false
 
-    while (!found) {
+    while (!found && attemps <= 10) {
       print("Entrer un nombre: ")
-      val input = StdIn.readLine()
-      val maybeInt = Try(input.trim.toInt).toOption
+
+      val maybeInt = Try(StdIn.readLine().trim.toInt).toOption
 
       maybeInt match {
         case Some(guess) if guess >= 0 && guess <= 100 =>
@@ -27,8 +24,11 @@ object CorrectionSeance1Ex2 {
             found = true
           }
         case _ =>
+          attempts += 1
           println("Entrée invalide. Merci d'entrer un entier entre 0 et 100.")
       }
     }
+    if (attemps > 10)
+      println("Vous avez atteint le nombre maximal de tentatives. Le chiffre mystere était : "+secret)
   }
 }
