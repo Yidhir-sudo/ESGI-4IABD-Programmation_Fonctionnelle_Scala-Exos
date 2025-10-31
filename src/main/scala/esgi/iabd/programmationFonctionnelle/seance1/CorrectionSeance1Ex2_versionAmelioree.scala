@@ -11,7 +11,7 @@ object CorrectionSeance1Ex2_versionAmelioree {
     while (!found && attemps <= 10) {
       print("Entrer un nombre: ")
 
-      val maybeInt = Try(StdIn.readLine().trim.toInt).toOption
+      val maybeInt: Option[Int] = Try(StdIn.readLine().trim.toInt).toOption
 
       maybeInt match {
         case Some(guess) if guess >= 0 && guess <= 100 =>
