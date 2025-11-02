@@ -1,19 +1,71 @@
-### Scala ###
+# Default .gitignore for the project.
+
+### Intellij ###
+.idea
+out/
+
+### Java ###
 *.class
 *.log
+
+### macOS ###
+.DS_Store
+
+### SBT ###
+dist/*
 target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+.history
+.cache
+.lib/
 
-### idea stuff ###
-.idea/.name
-.idea/libraries/
-.idea/modules/
-.idea/modules.xml
-.idea/scala_compiler.xml
-.idea/tasks.xml
-.idea/workspace.xml
-.idea_modules/
+### Scala ###
+.bloop/
+**/.bloop/
+project/.bloop/
+.bsp
+*.metals
+.metals/
+**/metals.sbt
+project/metals.sbt
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+### Vim ###
+# Swap
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
 
+# Session
+Session.vim
+Sessionx.vim
 
+# Temporary
+.netrwhist
+
+# Auto-generated tag files
+tags
+
+# Persistent undo
+[._]*.un~
+
+# Coc configuration directory
+.vim
+
+### VisualStudioCode ###
+.vscode
+
+### Docusaurus ###
+.docusaurus
+node_modules
+website/build
+
+### sbt-scalafix-defaults ###
+.scalafix.conf
+
+### sbt-scalafmt-defaults ###
+.scalafmt.conf
