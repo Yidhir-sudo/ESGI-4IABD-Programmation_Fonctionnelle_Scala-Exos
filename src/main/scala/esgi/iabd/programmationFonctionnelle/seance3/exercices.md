@@ -30,14 +30,3 @@
   val wordCounts = ...
   println(wordCounts)
 ```
-
-```scala
-val data = List(
-    Record("Paris", "2025-03-01", 12.3, 0.65),
-    Record("Paris", "2025-03-02", 15.1, 0.60),
-    Record("Lyon", "2025-03-01", 10.5, 0.70),
-    Record("Lyon", "2025-03-02", 9.8, 0.75),
-    Record("Marseille", "2025-03-01", 17.2, 0.55),
-    Record("Marseille", "2025-03-02", 18.4, 0.50)
-)
-```

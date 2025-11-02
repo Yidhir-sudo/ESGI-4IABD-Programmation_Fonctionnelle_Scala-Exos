@@ -13,5 +13,3 @@
 Écrire une fonction `safeSqrt(x: Double): Either[String, Double]` qui :
 1. retourne `"Nombre négatif"` (Left) si `x < 0`
 2. sinon retourne la racine carrée (Right)
-
-
