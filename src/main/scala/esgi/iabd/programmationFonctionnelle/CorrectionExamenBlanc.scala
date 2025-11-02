@@ -22,27 +22,74 @@ object CorrectionExamenBlanc {
     println("2) La temperature moyenne par ville est de: "+averageTemperatureByCity(data).mkString(","))
     println("3) La ville ayant la température moyenne la plus élevée est: "+hottestCity(data).getOrElse("Liste vide"))
     println("4) La nouvelle liste: "+normalizeTemperatures(data).mkString(","))
-    println(s"5) Les enregistrements dont la température est comprise entre $tempMin et $tempMax est: ${filterByTemperature(data).mkString(",")}")
-    println("6) La ville dont la différence entre la température max et min est la plus grande est: "+cityWithMostVariation(data).getOrElse("Liste vide"))
+    println(s"5) Les enregistrements dont la température est comprise entre $tempMin et $tempMax est: " +
+      s"${filterByTemperature(data, tempMin, tempMax).mkString(",")}")
+    println("6) La ville dont la différence entre la température max et min est la plus grande est: " +
+      cityWithMostVariation(data).getOrElse("Liste vide"))
     println("7) Summary par date: "+dailySummary(data).mkString(","))
   }
 
   // Question 1:
-  def averageTemperature(data: List[Record]): Double = data.map(_.temperature).sum / data.size
 
-  // Question 2:
+  // TODO add the round
+  def averageTemperature(data: List[Record]): Double = {
+    if (data.isEmpty){
+      println("[WARNING] Empty list")
+      0.0
+    }
+    else{
+      data.map(_.temperature).sum / data.size
+    }
+  }
+
+  // Question 2: 1ere version
   def averageTemperatureByCity(data: List[Record]): Map[String, Double] =
+    if (data.isEmpty){
+      println("[WARNING] Empty list")
+      Map("" -> 0.0)
+    }
+    else {
+      data
+        .groupBy(_.city) // Map(city -> List[Record])
+        .view
+        .mapValues(records => records.map(_.temperature).sum / records.size)
+        .toMap
+    }
+
+  // Question 2: 2eme version
+  def averageTemperatureByCity_2(data: List[Record]): Map[String, Double] =
+    if (data.isEmpty){
+      println("[WARNING] Empty list")
+      Map("" -> 0.0)
+    }
+    else {
+      data
+        .groupBy(_.city) // Map(city -> List[Record])
+        .map {
+          citysAndRecords =>
+            val key: String = citysAndRecords._1
+            val value: Double = citysAndRecords._2.map(_.temperature).sum / citysAndRecords._2.size
+
+            key -> value
+        }
+    }
+
+  // Question 2: 3eme version - pas compilable
+  /*def averageTemperatureByCity_3(data: List[Record]): Map[String, Double] =
     data
       .groupBy(_.city) // Map(city -> List[Record])
-      //.map(x => x._1 -> x._2.map(_.temperature).sum / X._2.size)
-      /*.map {
-        match x:
-          case (city, listOfRec) => city -> listOfRec.map(_.temperature).sum / listOfRec.size)
-          case _ => Map("" -> -1)
+      .map {
+        val mlk = citysAndRecords =>
+          citysAndRecords match {
+            case x =>
+              Map(city -> listOfRec.map(_.temperature).sum / listOfRec.size))
+
+            case _ =>
+              Map("" -> -1.0)
+          }
+
+        mlk
       }*/
-      .view
-      .mapValues(records => records.map(_.temperature).sum / records.size)
-      .toMap
 
   // Question 3:
   def hottestCity(data: List[Record]): Option[String] = {
@@ -61,17 +108,17 @@ object CorrectionExamenBlanc {
 
   // Question 6
   def cityWithMostVariation(data: List[Record]): Option[String] = {
-    val variations = data
+    val cityVariation: Map[String, Double] = data
       .groupBy(_.city)
       .view
-      .mapValues(records => {
-        val temps = records.map(_.temperature)
-        temps.max - temps.min
-      })
+      .mapValues {
+        records =>
+          records.map(_.temperature).max - records.map(_.temperature).min
+      }
       .toMap
 
-    if (variations.isEmpty) None
-    else Some(variations.maxBy(_._2)._1)
+    if (cityVariation.isEmpty) None
+    else Some(cityVariation.maxBy(_._2)._1)
   }
 
   // Question 7
@@ -79,10 +126,11 @@ object CorrectionExamenBlanc {
     data
       .groupBy(_.date)
       .view
-      .mapValues(records => {
-        val avgTemp = records.map(_.temperature).sum / records.size
-        val avgHum = records.map(_.humidity).sum / records.size
-        (avgTemp, avgHum)
-      })
+      .mapValues {
+        records =>
+          val avgTemp = records.map(_.temperature).sum / records.size
+          val avgHum = records.map(_.humidity).sum / records.size
+          (avgTemp, avgHum)
+      }
       .toMap
 }
